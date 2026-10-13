@@ -25,8 +25,9 @@ while running:
             time.sleep(0.5)
 
     else:
-        dist = width - 3
-        dist2 = 0
+        
+        dist = dist2-1
+        dist2 = width - dist2 - 2
 
     
 
