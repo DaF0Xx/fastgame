@@ -2,32 +2,30 @@ import random
 import time
 running = True
 
-base = "A              |"
-width = len(base)
-print(len(base))
-dist = width - 3
-dist2 = 0
+screen = "A              |"
+base = screen
+width = len(screen)
+print(len(screen))
+pos = [0, width - 3, 0, width]
 print("1234567890123456")
 
 while running:
-    print(base, end="\r")
+    print(screen, end="\r")
 
-    if dist >= 0:
-        if dist <= 3:
-            print("A" + " "*dist + "X" + " "*(dist2-1) + "X", end="\r")
-            dist -= 1
-            time.sleep(0.5)
-
+    if pos[1] >= 0:
+        if pos[1] <= 3:
+            screen = "A" + " "*pos[1] + "X" + " "*(pos[2]-1) + "X"
+            pos[1] -= 1
         else:
-            print("A" + " "*dist + "X", end="\r")
-            dist -= 1
-            dist2 += 1
-            time.sleep(0.5)
+            screen = "A" + " "*pos[1] + "X"
+            pos[1] -= 1
+            pos[2] += 1
+        time.sleep(0.5)
 
     else:
         
-        dist = dist2-1
-        dist2 = width - dist2 - 2
+        pos[1] = pos[2]-1
+        pos[2] = width - pos[2] - 2
 
+    print(base, end="\r")
     
-
