@@ -5,8 +5,8 @@ running = True
 screen = "A              |"
 base = screen
 width = len(screen)
-print(len(screen))
 pos = [0, width - 3, 0, width]
+print(len(screen))
 print("1234567890123456")
 
 while running:
@@ -23,7 +23,6 @@ while running:
         time.sleep(0.5)
 
     else:
-        
         pos[1] = pos[2]-1
         pos[2] = width - pos[2] - 2
 
